@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Wave\User;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,11 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            // ... other providers
+            \SocialiteProviders\Discord\DiscordExtendSocialite::class.'@handle',
+        ],
+        
         // Registered::class => [
         //     SendEmailVerificationNotification::class,
         // ],
