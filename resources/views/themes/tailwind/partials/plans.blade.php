@@ -3,7 +3,7 @@
         @php $features = explode(',', $plan->features); @endphp
 
         <div class="w-full max-w-md px-0 mx-auto mb-6 lg:w-1/3 lg:px-3 lg:mb-0">
-            <div class="relative flex flex-col h-full mb-10 bg-white border border-gray-200 rounded-lg shadow-xl border-b-none sm:mb-0">
+            <div class="relative flex flex-col mb-10 bg-white border border-gray-200 rounded-lg shadow-xl border-b-none sm:mb-0">
                 <div class="px-10 pt-7">
                     <div class="absolute right-0 inline-block mr-6 transform">
                         <h2 class="relative z-20 w-full h-full px-2 py-1 text-xs font-bold leading-tight tracking-wide text-center uppercase bg-white border-2 @if($plan->default){{ 'border-wave-400 text-wave-500' }}@else{{ 'border-gray-900 text-gray-800' }}@endif rounded">{{ $plan->name }}</h2>
